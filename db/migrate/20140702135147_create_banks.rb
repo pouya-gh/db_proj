@@ -1,8 +1,10 @@
 class CreateBanks < ActiveRecord::Migration
   def change
-    create_table :banks do |t|
+    create_table :banks, primary_key: :code do |t|
+      t.string :name
+      t.string :address
 
       t.timestamps
-    end
+    end 
   end
 end
