@@ -1,3 +1,3 @@
 class Bank < ActiveRecord::Base
-  has_many :branches
+  has_many :branches, dependent: :destroy
 end
