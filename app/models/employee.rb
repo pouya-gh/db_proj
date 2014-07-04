@@ -5,7 +5,7 @@ class Employee < ActiveRecord::Base
 
   after_save :regenerate_auth_token
 
-  validates :email, uniqueness: true
+  validates :email, uniqueness: true, presence: true
 
   def regenerate_auth_token
     update_columns(auth_token: generate_token)
