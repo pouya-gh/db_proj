@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140702181157) do
+ActiveRecord::Schema.define(version: 20140706063052) do
 
   create_table "ac_relationships", force: true do |t|
     t.integer  "account_id"
@@ -22,10 +22,10 @@ ActiveRecord::Schema.define(version: 20140702181157) do
 
   create_table "accounts", primary_key: "acct_no", force: true do |t|
     t.integer  "balance"
-    t.string   "type"
     t.integer  "branch_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "ac_type"
   end
 
   create_table "banks", primary_key: "code", force: true do |t|
@@ -72,10 +72,10 @@ ActiveRecord::Schema.define(version: 20140702181157) do
 
   create_table "loans", primary_key: "loan_no", force: true do |t|
     t.integer  "amount"
-    t.string   "type"
     t.integer  "branch_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "lo_type"
   end
 
 end
