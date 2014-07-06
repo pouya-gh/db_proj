@@ -1,0 +1,24 @@
+<table class="table">
+  <tr>
+    <td>Bank ID</td>
+    <td><%= @bank.code %></td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td><%= @bank.name %></td>
+  </tr>
+  <tr>
+    <td>Address</td>
+    <td><%= @bank.address %></td>
+  </tr>
+  <tr>
+    <%= link_to "Delete", @bank, method: :delete, confirm: "Are you sure?" %>
+  </tr>
+</table>
+<p></p>
+<table class="table">
+  <tr>Branches' ID</tr>
+  <% @branches.each do |brnch| %>
+    <tr><%= link_to brnch.branch_no, branch_path(brnch.branch_no) %></tr>
+  <% end %>
+</table>

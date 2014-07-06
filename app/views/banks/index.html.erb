@@ -1,0 +1,16 @@
+<table class="table">
+  <tr>
+    <td>Bank ID</td>
+    <td>Bank name</td>
+    <td>Address</td>
+    <td></td>
+  </tr>
+  <% @banks.each do |bnk| %>
+  <tr>
+    <td><%= link_to bnk.code, bnk %></td>
+    <td><%= bnk.name %></td>
+    <td><%= bnk.address %></td>
+    <td><%= link_to "Delete", bnk, method: :delete, confirm: "Are you sure?" %></td>
+  </tr>
+  <% end %>
+</table>
