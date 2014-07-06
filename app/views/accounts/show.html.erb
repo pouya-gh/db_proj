@@ -1,0 +1,28 @@
+<table>
+  <tr>
+    <td>Account ID</td>
+    <td><%= @account.acct_id %></td>
+  </tr>
+  <tr>
+    <td>Type</td>
+    <td><%= @account.ac_type %></td>
+  </tr>
+  <tr>
+    <td>Balance</td>
+    <td><%= @account.balance %></td>
+  </tr>
+  <tr>
+    <td>Branch ID</td>
+    <td><%= link_to @account.branch_id, branch_path(@account.branch_id) %></td>
+  </tr>
+  <tr>
+    <%= link_to "Delete", @account, method: :delete, confirm: "Are you sure?" %>
+  </tr>
+</table>
+
+<table class="table">
+  <tr>Customers' ID</tr>
+  <% @customers.each do |cstmr| %>
+    <tr><%= link_to cstmr.customer_id, customer_path(cstmr.customer_id) %></tr>
+  <% end %>
+</table>

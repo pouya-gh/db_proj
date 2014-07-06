@@ -1,0 +1,15 @@
+<%= form_for @account, url: {action: "create"}, html: {class: "form", method: "post"} do |f| %>
+  <%= f.label :ac_type, "Account type: " %>
+  <%= f.text_field :ac_type %>
+  <p></p>
+  <%= f.label :balance, "Balance: " %>
+  <%= f.text_field :balance %>
+  <p></p>
+  <%= f.label :customer_id, "Customer ID: " %>
+  <%= f.text_field :customer_id %>
+  <p></p>
+  <%= f.label :branch_id, "Branch ID: " %>
+  <%= f.text_field :branch_id %>
+  <p></p>
+  <%= f.submit "Create" %>
+<% end %>

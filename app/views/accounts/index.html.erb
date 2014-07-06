@@ -1,0 +1,17 @@
+<table class="table">
+  <tr>
+    <td>Account ID</td>
+    <td>Type</td>
+    <td>Balance</td>
+    <td>Branch ID</td>
+  </tr>
+  <% @accounts.each do |accnt| %>
+    <tr>
+      <td><%= link_to accnt.acct_no, accnt %></td>
+      <td><%= accnt.ac_type %></td>
+      <td><%= accnt.balance %></td>
+      <td><%= link_to accnt.branch_id, branch_path(accnt.branch_id) %></td>
+      <td><%= link_to "Delete account", accnt, method: :delete, confirm: "Are you sure?" %></td>
+    </tr>
+  <% end %>
+</table>
