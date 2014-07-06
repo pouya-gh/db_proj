@@ -1,0 +1,18 @@
+<table class="table">
+  <tr>
+    <td>Loan ID</td>
+    <td>Type</td>
+    <td>Amount</td>
+    <td>Branch ID</td>
+    <td></td>
+  </tr>
+  <% @loans.each do |ln| %>
+    <tr>
+      <td><%= link_to ln.loan_no, ln %></td>
+      <td><%= ln.lo_type %></td>
+      <td><%= ln.amount %></td>
+      <td><%= link_to ln.branch_id, branch_path(ln.branch_id) %></td>
+      <td><%= link_to "Delete loan", ln, method: :delete, confirm: "Are you sure?" %></td>
+    </tr>
+  <% end %>
+</table>

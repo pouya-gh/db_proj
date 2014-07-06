@@ -1,0 +1,15 @@
+<%= form_for @loan, url: {action: "create"}, html: {class: "form", method: "post"} do |f| %>
+  <%= f.label :lo_type, "Loan type: " %>
+  <%= f.text_field :lo_type %>
+  <p></p>
+  <%= f.label :amount, "Amount: " %>
+  <%= f.text_field :amount %>
+  <p></p>
+  <%= f.label :customer_id, "Customer ID: " %>
+  <%= f.text_field :customer_id %>
+  <p></p>
+  <%= f.label :branch_id, "Branch ID: " %>
+  <%= f.text_field :branch_id %>
+  <p></p>
+  <%= f.submit "Create" %>
+<% end %>
