@@ -1,0 +1,9 @@
+<%= form_for @branch, url: {action: "create"}, html: {class: "form", method: "post"} do |f| %>
+  <%= f.label :address, "Address: " %>
+  <%= f.text_field :address %>
+  <p></p>
+  <%= f.label :bank_id, "Bank ID: " %>
+  <%= f.text_field :bank_id %>
+  <p></p>
+  <%= f.submit "Create" %>
+<% end %>
