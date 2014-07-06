@@ -1,0 +1,12 @@
+<%= form_for @bank, url: {action: "create"}, html: {class: "form", method: "post"} do |f| %>
+  <%= f.label :name, "Name: " %>
+  <%= f.text_field :name %>
+  <p></p>
+  <%= f.label :address, "Address: " %>
+  <%= f.text_field :address %>
+  <p></p>
+  <%= f.label :phone, "Phone: " %>
+  <%= f.text_field :phone %>
+  <p></p>
+  <%= f.submit "Create" %>
+<% end %>

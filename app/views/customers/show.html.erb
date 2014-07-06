@@ -1,0 +1,35 @@
+<table class="table">
+  <tr>
+    <td>Customer ID</td>
+    <td><%= @customer.code %></td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td><%= @customer.name %></td>
+  </tr>
+  <tr>
+    <td>Address</td>
+    <td><%= @customer.address %></td>
+  </tr>
+  <tr>
+    <td>Phone</td>
+    <td><%= @customer.phone %></td>
+  </tr>
+  <tr>
+    <%= link_to "Delete", @customer, method: :delete, confirm: "Are you sure?" %>
+  </tr>
+</table>
+<p></p>
+<table class="table">
+  <tr>Loans' ID</tr>
+  <% @loans.each do |ln| %>
+    <tr><%= link_to ln.loan_no, loan_path(ln.loan_id) %></tr>
+  <% end %>
+</table>
+<p></p>
+<table class="table">
+  <tr>Accounts' ID</tr>
+  <% @accounts.each do |accnt| %>
+    <tr><%= link_to accnt.account_id, account_path(accnt.account_id) %></tr>
+  <% end %>
+</table>
