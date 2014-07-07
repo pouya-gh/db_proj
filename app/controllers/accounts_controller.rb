@@ -19,8 +19,10 @@ class AccountsController < ApplicationController
   end
 
   def create
-    if customer = Customer.find(params[:account][:customer_id]) 
-      account = Account.create(params[:account])
+    if customer = Customer.find_by(ssn: params[:account][:customer_id]) 
+      account = Account.create(ac_type: params[:account][:ac_type],
+                               balance: params[:account][:balance],
+                               branch_id: params[:account][:branch_id])
       if account.save
         flash[:success] = "Account added successfully!"
         AcRelationship.create(account_id: account.acct_no, 

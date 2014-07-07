@@ -8,7 +8,7 @@ class BanksController < ApplicationController
 
   def show
     @bank = Bank.find(params[:id])
-    @branches = Bank.where(bank_id: params[:id])
+    @branches = Branch.where(bank_id: params[:id])
   end
 
   def new
@@ -19,7 +19,8 @@ class BanksController < ApplicationController
   end
 
   def create
-    @bank = Bank.create(params[:bank])
+    @bank = Bank.create(name: params[:bank][:name], 
+                        address: params[:bank][:address])
     if @bank.save
       flash[:success] = "Bank added successfully"
       redirect_to current_employee

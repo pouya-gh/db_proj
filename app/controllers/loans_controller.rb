@@ -19,11 +19,13 @@ class LoansController < ApplicationController
   end
 
   def create
-    if customer = Customer.find(params[:loan][:customer_id]) 
-      loan = loan.create(params[:loan])
+    if customer = Customer.find_by(ssn: params[:loan][:customer_id]) 
+      loan = Loan.create(lo_type: params[:loan][:lo_type],
+                         amount: params[:loan][:amount],
+                         branch_id: params[:loan][:branch_id])
       if loan.save
         flash[:success] = "Loan added successfully!"
-        AcRelationship.create(loan_id: loan.loan_no, 
+        LcRelationship.create(loan_id: loan.loan_no, 
                               customer_id: params[:loan][:customer_id]).save
         redirect_to current_employee
       else

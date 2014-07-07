@@ -20,7 +20,9 @@ class CustomersController < ApplicationController
   end
 
   def create
-    @customer = Customer.create(params[:customer])
+    @customer = Customer.create(name: params[:customer][:name], 
+                                address: params[:customer][:address],
+                                phone: params[:customer][:phone])
     if @customer.save
       flash[:success] = "Customer added successfully"
       redirect_to current_employee
