@@ -1,6 +1,11 @@
 <p>
 Hello <%= @employee.first_name + " " + @employee.last_name %>! 
 Where do you want to go?
+<p></p>
+<%= link_to "Backup database.", backup_path %>
+<p></p>
+<%= link_to "Restore database.", restore_path %>
+<p></p>
 </p>
 <table class="table">
   <tr>
