@@ -3,7 +3,19 @@ DbProj::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root to: 'application#index'
+
+  get '/sign_in', to: "sessions#new", as: 'sign_in'
+  post '/sessions', to: "sessions#create", as: "submit_login"
+  get '/sign_out', to: "sessions#destroy", as: "sign_out"
+
+  resources :accounts, except: [:edit, :update]
+  resources :banks, except: [:edit, :update]
+  resources :branches, except: [:edit, :update]
+  resources :customers, except: [:edit, :update]
+  resources :employees, only: [:show]
+  resources :loans, except: [:edit, :update]
+  resources :sessions, only: [:new, :create, :destroy]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
