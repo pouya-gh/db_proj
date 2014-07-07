@@ -8,6 +8,8 @@ DbProj::Application.routes.draw do
   get '/sign_in', to: "sessions#new", as: 'sign_in'
   post '/sessions', to: "sessions#create", as: "submit_login"
   get '/sign_out', to: "sessions#destroy", as: "sign_out"
+  get '/backup', to: "employees#backup", as: "backup"
+  get '/restore', to: "employees#restore", as: "restore"
 
   resources :accounts, except: [:edit, :update]
   resources :banks, except: [:edit, :update]
