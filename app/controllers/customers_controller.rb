@@ -35,6 +35,6 @@ class CustomersController < ApplicationController
   def destroy
     customer = Customer.find(params[:id])
     customer.destroy
-    redirect_to current_employee
+    redirect_to customers_path
   end
 end

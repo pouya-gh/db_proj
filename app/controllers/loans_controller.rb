@@ -41,6 +41,6 @@ class LoansController < ApplicationController
   def destroy
     loan = Loan.find(params[:id])
     loan.destroy
-    redirect_to current_employee
+    redirect_to loans_path
   end
 end

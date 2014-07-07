@@ -33,6 +33,6 @@ class BanksController < ApplicationController
   def destroy
     bank = Bank.find(params[:id])
     bank.destroy
-    redirect_to current_employee
+    redirect_to banks_path
   end
 end

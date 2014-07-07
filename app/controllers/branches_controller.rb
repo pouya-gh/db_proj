@@ -37,6 +37,6 @@ class BranchesController < ApplicationController
   def destroy
     branch = Branch.find(params[:id])
     branch.destroy
-    redirect_to current_employee
+    redirect_to branches_path
   end
 end
