@@ -5,8 +5,8 @@
   <%= f.label :amount, "Amount: " %>
   <%= f.text_field :amount %>
   <p></p>
-  <%= f.label :customer_id, "Customer ID: " %>
-  <%= f.text_field :customer_id %>
+  <%= label_tag :customer_id, "Customer ID: " %>
+  <%= text_field_tag :customer_id, "", name: "loan[customer_id]" %>
   <p></p>
   <%= f.label :branch_id, "Branch ID: " %>
   <%= f.text_field :branch_id %>

@@ -1,0 +1,14 @@
+<%= form_for :session,url: sessions_path, html: {action: "/sessions", method: "post", role: "form"} do |f| %>
+  <div class="form-group">
+    <%= f.label :email, "Email: " %>
+    <%= f.text_field :email, {placeholder: "Email", class: 'form-control'} %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password, "Password: " %>
+    <%= f.password_field :password, {placeholder: "Password", class: 'form-control'} %>
+  </div>
+
+  <%= f.submit "Sign in", {class: 'btn btn-primary', id: 'button'} %>
+<% end %>
+

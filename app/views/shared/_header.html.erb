@@ -1,0 +1,19 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+
+    <ul class="nav navbar-nav">
+      <% if !signed_in? %>
+        <div id="login">
+          <p id="open">Login</p>
+            <%= render 'shared/sign_in_form' %>
+        </div>
+
+      <% else %>
+        <%= link_to "Sign out", sign_out_path %>
+        |
+        <%= link_to "Employee home page", current_employee %>
+      <% end %>
+    </ul>
+
+  </div>
+</nav>

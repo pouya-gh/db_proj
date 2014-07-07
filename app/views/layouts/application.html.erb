@@ -6,14 +6,72 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tags %>
+
+  <style>
+  #login {
+    width: 300px;
+    position: absolute;
+    left: 560px;
+    top: 6px;
+    z-index: 100;
+  }
+
+  #open {
+    margin: 0;
+    cursor: pointer;
+    background: rgb(255,255,255)  url(../_images/open.png) no-repeat 8px 7px;
+    color: rgb(58,80,123);
+    padding: 5px 0 2px 30px;
+  }
+
+  #login .close {
+    background-image: url(../_images/close.png);
+    background-color: rgb(110,138,195); 
+  }
+
+  #open:hover {
+    color: rgb(0,0,0);
+    background-color: rgb(110,138,195); 
+  }
+
+  #login form {
+    padding: 10px 10px 10px 10px;
+    display: none;  
+    background-color: rgb(255,255,255);
+  }
+  #login label {
+    display: inline-block;
+    width: 100px;
+    text-align:right;
+    margin: 0 15px 0 0;
+    color: rgb(58,80,123);
+  }
+  #login input {
+    font-size: 14px;  
+  }
+  #login #button {
+    margin-left: 50px;  
+  }
+  </style>
+  <script>
+  $(document).ready(function() {
+    $('#open').click(function() {
+     $('#login form').slideToggle(300);
+     $(this).toggleClass('close'); 
+    }); // end click
+  }); // end ready
+  </script>
+
 </head>
 <body>
+
+<%= render "shared/header" %>
 
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
 
-      <%= render 'shared/messages' %>
+      <%= render 'shared/show_flash' %>
 
       <%= yield %>
     </div>
