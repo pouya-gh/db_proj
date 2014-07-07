@@ -1,0 +1,26 @@
+<p>
+Hello <%= @employee.first_name + " " + @employee.last_name %>! 
+Where do you want to go?
+</p>
+<table class="table">
+  <tr>
+    <td><%= link_to "Accounts", accounts_path %></td>
+    <td><%= link_to "Add new account", new_account_path %></td>
+  </tr>
+  <tr>
+    <td><%= link_to "Banks", banks_path %></td>
+    <td><%= link_to "Add new bank", new_bank_path %></td>
+  </tr>
+  <tr>
+    <td><%= link_to "Branches", branches_path %></td>
+    <td><%= link_to "Add new branch", new_branch_path %></td>
+  </tr>
+  <tr>
+    <td><%= link_to "Customers", customers_path %></td>
+    <td><%= link_to "Add new customer", new_customer_path %></td>
+  </tr>
+  <tr>
+    <td><%= link_to "Loans", loans_path %></td>
+    <td><%= link_to "Add new loan", new_loan_path %></td>
+  </tr>
+</table>
