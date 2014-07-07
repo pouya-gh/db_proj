@@ -27,14 +27,14 @@ class LoansController < ApplicationController
         flash[:success] = "Loan added successfully!"
         LcRelationship.create(loan_id: loan.loan_no, 
                               customer_id: params[:loan][:customer_id]).save
-        redirect_to current_employee
+        redirect_to loans_path
       else
         flash[:danger] = "Failed!"
-        redirect_to current_employee
+        redirect_to loans_path
       end
     else
       flash[:danger] = "Customer ID invalid!"
-      redirect_to current_employee
+      redirect_to loans_path
     end
   end
 

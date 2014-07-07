@@ -27,14 +27,14 @@ class AccountsController < ApplicationController
         flash[:success] = "Account added successfully!"
         AcRelationship.create(account_id: account.acct_no, 
                               customer_id: params[:account][:customer_id]).save
-        redirect_to current_employee
+        redirect_to accounts_path
       else
         flash[:danger] = 'Failed!'
-        redirect_to current_employee
+        redirect_to accounts_path
       end
     else
       flash[:danger] = "Customer ID invalid!"
-      redirect_to current_employee
+      redirect_to accounts_path
     end
   end
 

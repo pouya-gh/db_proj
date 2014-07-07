@@ -25,7 +25,7 @@ class CustomersController < ApplicationController
                                 phone: params[:customer][:phone])
     if @customer.save
       flash[:success] = "Customer added successfully"
-      redirect_to current_employee
+      redirect_to customers_path
     else
       flash.now[:warning] = "Information invalid!"
       render :new

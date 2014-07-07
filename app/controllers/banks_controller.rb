@@ -23,7 +23,7 @@ class BanksController < ApplicationController
                         address: params[:bank][:address])
     if @bank.save
       flash[:success] = "Bank added successfully"
-      redirect_to current_employee
+      redirect_to banks_path
     else
       flash.now[:warning] = "Information invalid!"
       render :new

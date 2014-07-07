@@ -23,14 +23,14 @@ class BranchesController < ApplicationController
                              bank_id: params[:branch][:bank_id])
       if branch.save
         flash[:success] = "Branch added successfully!"
-        redirect_to current_employee
+        redirect_to branches_path
       else
         flash[:danger] = 'Failed!'
-        redirect_to current_employee
+        redirect_to branches_path
       end
     else
       flash[:danger] = "Bank ID invalid!"
-      redirect_to current_employee
+      redirect_to branches_path
     end
   end
 
