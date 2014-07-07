@@ -60,8 +60,8 @@ ActiveRecord::Schema.define(version: 20140706063052) do
     t.datetime "updated_at"
   end
 
-  add_index "employees", ["auth_token"], name: "index_employees_on_auth_token", unique: true
-  add_index "employees", ["email"], name: "index_employees_on_email", unique: true
+  add_index "employees", ["auth_token"], name: "index_employees_on_auth_token", unique: true, using: :btree
+  add_index "employees", ["email"], name: "index_employees_on_email", unique: true, using: :btree
 
   create_table "lc_relationships", force: true do |t|
     t.integer  "loan_id"

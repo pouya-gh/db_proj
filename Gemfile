@@ -5,7 +5,7 @@ gem 'rails', '4.0.2'
 
 # Use sqlite3 as the database for Active Record
 group :test, :development do
-  gem 'sqlite3'
+  gem 'mysql'
 end
 
 gem 'bcrypt-ruby', '~> 3.1.2'
