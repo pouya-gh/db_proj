@@ -16,11 +16,13 @@
     <%= link_to "Delete", @bank, method: :delete, confirm: "Are you sure?" %>
   </tr>
 </table>
+<div align="center">_________________________________________________________________________________</div>
+<p></p>
 <p></p>
 <table class="table">
-  <tr>Branches' ID</tr>
+  <tr><td>Branches' ID</td></tr>
   <% @branches.each do |brnch| %>
-    <tr><%= link_to brnch.branch_no, branch_path(brnch.branch_no) %></tr>
+    <tr><td><%= link_to brnch.branch_no, branch_path(brnch.branch_no) %></td></tr>
   <% end %>
 </table>
 <%= link_to "Add new bank", new_bank_path %>

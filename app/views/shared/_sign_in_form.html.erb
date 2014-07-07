@@ -1,4 +1,4 @@
-<%= form_for :session,url: sessions_path, html: {action: "/sessions", method: "post", role: "form"} do |f| %>
+<%= form_for :session,url: sessions_path, html: {action: "/sessions", method: "post", role: "form", id: 'signin'} do |f| %>
   <div class="form-group">
     <%= f.label :email, "Email: " %>
     <%= f.text_field :email, {placeholder: "Email", class: 'form-control'} %>

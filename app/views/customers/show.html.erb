@@ -19,6 +19,8 @@
     <%= link_to "Delete", @customer, method: :delete, confirm: "Are you sure?" %>
   </tr>
 </table>
+<div align="center">_________________________________________________________________________________</div>
+<p></p>
 <p></p>
 <table class="table">
   <tr>Loans' ID</tr>
@@ -26,10 +28,12 @@
     <tr><%= link_to ln.loan_no, loan_path(ln.loan_id) %></tr>
   <% end %>
 </table>
+<div align="center">_________________________________________________________________________________</div>
+<p></p>
 <p></p>
 <table class="table">
-  <tr>Accounts' ID</tr>
+  <tr><td>Accounts' ID</td></tr>
   <% @accounts.each do |accnt| %>
-    <tr><%= link_to accnt.account_id, account_path(accnt.account_id) %></tr>
+    <tr></td><%= link_to accnt.account_id, account_path(accnt.account_id) %></td></tr>
   <% end %>
 </table>

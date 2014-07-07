@@ -1,4 +1,4 @@
-<table>
+<table  class="table">
   <tr>
     <td>Loan ID</td>
     <td><%= @loan.loan_no %></td>
@@ -19,10 +19,12 @@
     <%= link_to "Delete", @loan, method: :delete, confirm: "Are you sure?" %>
   </tr>
 </table>
+<div align="center">_________________________________________________________________________________</div>
+<p></p>
 <p></p>
 <table class="table">
-  <tr>Customers' ID</tr>
+  <tr><td>Customers' ID</td></tr>
   <% @customers.each do |cstmr| %>
-    <tr><%= link_to cstmr.customer_id, customer_path(cstmr.customer_id) %></tr>
+    <tr><td><%= link_to cstmr.customer_id, customer_path(cstmr.customer_id) %></td></tr>
   <% end %>
 </table>

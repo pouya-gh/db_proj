@@ -2,9 +2,10 @@
 <html>
 <head>
   <title>DbProj</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= javascript_include_tag :defaults %>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "base", media: "all", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 
   <style>
@@ -24,7 +25,7 @@
     padding: 5px 0 2px 30px;
   }
 
-  #login .close {
+  #login .close1 {
     background-image: url(../_images/close.png);
     background-color: rgb(110,138,195); 
   }
@@ -57,11 +58,10 @@
   $(document).ready(function() {
     $('#open').click(function() {
      $('#login form').slideToggle(300);
-     $(this).toggleClass('close'); 
+     $(this).toggleClass('close1'); 
     }); // end click
   }); // end ready
   </script>
-
 </head>
 <body>
 
