@@ -8,6 +8,9 @@ group :test, :development do
   gem 'mysql'
 end
 
+gem 'thinreports'
+gem 'thinreports-rails'
+
 gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use SCSS for stylesheets
