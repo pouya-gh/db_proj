@@ -9,7 +9,7 @@
   </tr>
   <tr>
     <td>Bank ID</td>
-    <td><%= @branch.bank_id %></td>
+    <td><%= link_to @branch.bank_id, bank_path(@branch.bank_id) %></td>
   </tr>
   <tr>
     <%= link_to "Delete", @branch, method: :delete, confirm: "Are you sure?" %>

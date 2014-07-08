@@ -3,12 +3,14 @@
   <tr>
     <td>Branch ID</td>
     <td>Address</td>
+    <td>Bank ID</td>
     <td></td>
   </tr>
   <% @branches.each do |brnch| %>
   <tr>
     <td><%= link_to brnch.branch_no, brnch %></td>
     <td><%= brnch.address %></td>
+    <td><%= link_to brnch.bank_id, bank_path(brnch.bank_id) %></td>
     <td><%= link_to "Delete", brnch, method: :delete, confirm: "Are you sure?" %></td>
   </tr>
   <% end %>
