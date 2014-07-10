@@ -3,7 +3,7 @@ DbProj::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root to: 'application#index'
+  root to: 'sessions#new'
 
   get '/sign_in', to: "sessions#new", as: 'sign_in'
   post '/sessions', to: "sessions#create", as: "submit_login"
