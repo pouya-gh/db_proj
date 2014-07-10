@@ -1,14 +1,11 @@
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
+    <%= link_to "Banks", root_path, id: "logo", class: "brand" %>
 
     <ul class="nav navbar-nav">
-      <% if !signed_in? %>
-        <div id="login" style="background-color: #555555;">
-          <p id="open">Login</p>
-            <%= render 'shared/sign_in_form' %>
-        </div>
 
-      <% else %>
+      
+      <% if signed_in? %>
         <%= link_to "Sign out", sign_out_path %>
         |
         <%= link_to "Employee home page", current_employee %>
