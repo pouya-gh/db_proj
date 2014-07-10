@@ -13,7 +13,36 @@
  */
 nav
 {
-  border: solid;
-  border-radius: 5px;
+  background-color: #eeeeee;
+  border-bottom: solid 1px #aaaaaa;
+  /*border-radius: 5px;*/
   height: 45px;
+}
+
+.nav 
+{
+  margin-top: 20px;
+}
+
+.table
+{
+  border: solid 1px #dddddd;
+}
+
+#logo
+{
+  font-size: 25;
+  float: right;
+  margin-right: 10px;
+  background-size: 25; 
+}
+
+#signin
+{
+  margin-left: 43%;
+}
+
+.form
+{
+  margin-left: 43%;
 }

@@ -23,9 +23,9 @@
 <p></p>
 <p></p>
 <table class="table">
-  <tr>Loans' ID</tr>
+  <tr><td>Loans' ID</td></tr>
   <% @loans.each do |ln| %>
-    <tr><%= link_to ln.loan_no, loan_path(ln.loan_id) %></tr>
+    <tr><td><%= link_to ln.loan_id, loan_path(ln.loan_id) %></td></tr>
   <% end %>
 </table>
 <div align="center">_________________________________________________________________________________</div>
