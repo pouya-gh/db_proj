@@ -1,0 +1,20 @@
+<%= link_to "Add new query", new_query_path %>
+<table class="table">
+  <tr>
+    <td>ID</td>
+    <td>Query</td>
+    <td>Description</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <% @queries.each do |q| %>
+    <tr>
+      <td><%= link_to q.id, q %></td>
+      <td><%= q.query_string[0..29] + "..." %></td>
+      <td><%= q.description[0..29] + "..." %></td>
+      <td><%= link_to "Execute", execute_query_path(q.id) %></td>
+      <td><%= link_to "Delete", q, method: :delete, confirm: "Are you sure?" %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to "Add new query", new_query_path %>

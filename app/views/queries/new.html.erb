@@ -1,0 +1,12 @@
+<%= form_for @query, url: {aciton: "create"}, html: {class: "form", method: "post"} do |f| %>
+  <%= f.label :query_string, "Query: " %>
+  <%= f.text_area :query_string %>
+  <p></p>
+  <%= f.label :description, "Description: " %>
+  <%= f.text_area :description %>
+  <p></p>
+  <%= f.label :report_order, "Report order: " %>
+  <%= f.text_area :report_order %>
+  <p></p>
+  <%= f.submit "Create", {class: 'btn btn-primary', id: 'button'} %>
+<% end %>
