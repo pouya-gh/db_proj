@@ -15,6 +15,8 @@ DbProj::Application.routes.draw do
   get '/reportaccounts', to: "employees#accounts_report", as: "accounts_report"
   get '/reportbranches', to: "employees#branches_report", as: "branches_report"
   get '/reportloans', to: "employees#loans_report", as: "loans_report"
+  get '/queries/report/:id', to: "queries#report_query", as: "query_report"
+  get '/queries/execute/:id', to: "queries#execute_query", as: "execute_query"
 
   resources :accounts, except: [:edit, :update]
   resources :banks, except: [:edit, :update]
@@ -23,6 +25,7 @@ DbProj::Application.routes.draw do
   resources :employees, only: [:show]
   resources :loans, except: [:edit, :update]
   resources :sessions, only: [:new, :create, :destroy]
+  resources :queries, except: [:edit, :update]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
