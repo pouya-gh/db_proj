@@ -20,7 +20,8 @@ class BranchesController < ApplicationController
   def create
     if Bank.find_by(code: params[:branch][:bank_id].to_i)
       branch = Branch.create(address: params[:branch][:address],
-                             bank_id: params[:branch][:bank_id])
+                             bank_id: params[:branch][:bank_id],
+                             asset: 0)
       if branch.save
         flash[:success] = "Branch added successfully!"
         redirect_to branches_path

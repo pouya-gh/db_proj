@@ -126,14 +126,14 @@ class EmployeesController < ApplicationController
     report.start_new_page
     branches = Branch.all
     report.page.list(:advanced_list) do |list|
-      list.add_row :detail => "ID*Address*Bank ID"
+      list.add_row :detail => "ID*Address*Bank ID*Asset"
       list.store.row_count += 1
     end
     branches.each do |t|
       # Internaly #start_new_page() method is called,
       # the page break automatically.
       report.page.list(:advanced_list) do |list|
-        list.add_row :detail => "#{t.branch_no}*#{t.address}*#{t.bank_id}"
+        list.add_row :detail => "#{t.branch_no}*#{t.address}*#{t.bank_id}*#{t.asset}"
         list.store.row_count += 1
       end
     end
