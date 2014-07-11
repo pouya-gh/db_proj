@@ -3,13 +3,11 @@
     <td>Decription</td>
     <td><%= @query.description %></td>
   </tr>
-  <td>
     <td>Query</td>
     <td><%= @query.query_string %></td>
-  </td>
   <tr>
     <td><%= link_to "Execute", execute_query_path(@query.id) %></td>
-    <td><%= link_to "Report", report_query_path(@query.id) %></td>
+    <td><%= link_to "Report", query_report_path(@query.id) %></td>
   </tr>
   <tr>
     <td><%= link_to "Delete", @query, method: :delete, confirm: "Are you sure?" %></td>

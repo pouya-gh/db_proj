@@ -38,7 +38,7 @@ class QueriesController < ApplicationController
     @result = query.sql
   end
 
-  def repert_query
+  def report_query
     report = ThinReports::Report.new layout: "#{Rails.root}/reports/advanced_list.tlf"
      
     report.layout.config.list(:advanced_list) do
@@ -64,16 +64,16 @@ class QueriesController < ApplicationController
       list.add_row :detail => query.report_order
       list.store.row_count += 1
     end
-    loans.each do |t|
+    result.each do |t|
       # Internaly #start_new_page() method is called,
       # the page break automatically.
-      r = ""
-      a_row = t.each do |r|
-        r << "*#{r}"
+      a_row = ""
+      t.each do |r|
+        a_row << "*#{r}"
       end
-      r = r[1..-1]
+      a_row = a_row[1..-1]
       report.page.list(:advanced_list) do |list|
-        list.add_row :detail => r
+        list.add_row :detail => a_row
         list.store.row_count += 1
       end
     end
