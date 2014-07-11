@@ -12,6 +12,10 @@
     <td><%= link_to @branch.bank_id, bank_path(@branch.bank_id) %></td>
   </tr>
   <tr>
+    <td>Branch asset</td>
+    <td><%= @branch.asset %></td> 
+  </tr> 
+  <tr>
     <%= link_to "Delete", @branch, method: :delete, confirm: "Are you sure?" %>
   </tr>
 </table>
