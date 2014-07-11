@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140711080551) do
+ActiveRecord::Schema.define(version: 20140711150605) do
 
   create_table "ac_relationships", force: true do |t|
     t.integer  "account_id"
@@ -80,11 +80,11 @@ ActiveRecord::Schema.define(version: 20140711080551) do
   end
 
   create_table "queries", force: true do |t|
-    t.string   "query_string"
     t.string   "description"
     t.string   "report_order"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "query_string"
   end
 
 end
