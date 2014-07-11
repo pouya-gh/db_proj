@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140711053806) do
+ActiveRecord::Schema.define(version: 20140711080551) do
 
   create_table "ac_relationships", force: true do |t|
     t.integer  "account_id"
@@ -77,6 +77,14 @@ ActiveRecord::Schema.define(version: 20140711053806) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "lo_type"
+  end
+
+  create_table "queries", force: true do |t|
+    t.string   "query_string"
+    t.string   "description"
+    t.string   "report_order"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

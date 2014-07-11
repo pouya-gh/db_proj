@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  query_string: MyString
+  description: MyString
+  report_order: MyString
+
+two:
+  query_string: MyString
+  description: MyString
+  report_order: MyString
