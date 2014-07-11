@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140706063052) do
+ActiveRecord::Schema.define(version: 20140711053806) do
 
   create_table "ac_relationships", force: true do |t|
     t.integer  "account_id"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20140706063052) do
     t.integer  "bank_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "asset"
   end
 
   create_table "customers", primary_key: "ssn", force: true do |t|
